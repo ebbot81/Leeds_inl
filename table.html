@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="leeds.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leeds</title>
+</head>
+
+<body>
+    <header>
+        <h1> <img src="img/logo.png"></h1>
+    </header>
+
+    <section>
+        <h2><a href="leeds.html">Startpage</a></h2>
+    </section>
+
+    <div id="table"></div>
+        <p class="position">Position</p>
+        <p class="name">Name</p>
+        <p class="goals">Goals</p>
+        <p class="assists">Assists</p>
+        <p class="points">Points</p>
+
+        <script>
+
+            class Player {
+                constructor(name, goals, assists) {
+                    this.name = name;
+                    this.goals = goals;
+                    this.assists = assists;
+                    this.points = goals + assists;
+                }
+            }
+            const players = [
+                new Player("Patrick Bamford", 4, 1),
+                new Player("Pablo Hernandez", 2, 2),
+                new Player("Eddie Nketiah", 3, 0),
+                new Player("Mateusz Klich", 1, 1),
+                new Player("Ezgjan Alioski", 3, 0),
+                new Player("Stuart Dallas", 1, 0),
+                new Player("Jack Harrison", 1, 4),
+                new Player("Helder Costa", 0, 1),
+                new Player("Adam Forshaw", 0, 1),
+                new Player("Kalvin Phillips", 1, 1)
+            ];
+
+            let textInput = document.querySelector('#table');
+            const sortedPlayers = players.sort(function (currentListItem, nextListItem) {
+
+                if (currentListItem.points > nextListItem.points) {
+                    return -1;
+                } else if (currentListItem.points < nextListItem.points) {
+                    return 1;
+                }
+                else {
+                    if (currentListItem.goals >= nextListItem.goals)
+                        return -1;
+                    else {
+                        return 1;
+                    }
+                }
+            })
+
+            sortedPlayers.forEach(function (item, index) {
+                let playerHtml = document.createElement("div");
+                let rankHtml = document.createElement("span");
+                let nameHtml = document.createElement("span");
+                let goalsHtml = document.createElement("span");
+                let assistsHtml = document.createElement("span");
+                let pointsHtml = document.createElement("span");
+
+                rankHtml.innerText = index + 1;
+                nameHtml.innerText = item.name;
+                goalsHtml.innerText = item.goals;
+                assistsHtml.innerText = item.assists;
+                pointsHtml.innerText = item.points;
+
+                playerHtml.appendChild(rankHtml);
+                playerHtml.appendChild(nameHtml);
+                playerHtml.appendChild(goalsHtml);
+                playerHtml.appendChild(assistsHtml);
+                playerHtml.appendChild(pointsHtml);
+
+                textInput.appendChild(playerHtml);
+
+            });
+
+        </script>
+
+        <script src="leeds.js"></script>
+</body>
+
+</html>

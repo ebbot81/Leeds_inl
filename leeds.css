@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+}
+
+.players {
+    text-decoration: none;
+    text-align: center;
+   
+}
+
+main {
+    text-align: center;
+}
+
+li {
+   font-size: 25px;
+   list-style-type: none;
+   text-decoration: none;
+}
+
+form {
+    text-align: center;
+}
+
+span.menu {
+    text-decoration: underline;
+    font-size: 25px;
+    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    text-align: left;
+}
+
+header {
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+span.next-game {
+    text-align: left;
+}
+
+ul img {
+    width: 10%;
+    height: 10%
+    
+}
+
+html {
+    background-color: rgb(215, 218, 223);
+}
+
+.container_myMenu {
+    display: flex;
+    align-items: left;
+}
+.container_myMenu div {
+    padding: 10px;
+    text-align: center;
+}
+.box-1 {
+    flex: 1;
+    height: 400px;
+    background-color: rgb(215, 218, 223);
+}    
+.box-2 {
+    flex: 2;
+  
+}
+.box-3 {
+    flex: 1;
+}
+
+p.copyright {
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 36px;
+    position: absolute;
+    left: 650px;
+    bottom: 0;
+}
+div.box-1 {
+    border: 8px solid black;
+}
+
+section.member {
+    border-bottom: 8px solid black;
+    padding: 10px;
+}
+
+#join-button {
+    background: #1594e5;
+    color: #fff;
+    font-family: calibri;
+    display: block;
+    width: 140px;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+#menu-button {
+    background: #1594e5;
+    color: #fff;
+    font-family: calibri;
+    display: block;
+    width: 140px;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+  #table > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px 0px 0px 20px;
+  }
+  #table > div > span {
+
+    display: grid;
+    grid-template-columns: 200px 10px 10px .1fr .1fr;
+    justify-items: center;
+    align-content: center;
+    margin: 2px 5px 0px 10px;
+  }
+
+  ul.table {
+    margin: 50px;
+    padding: 0;
+    display: flex;
+  }
+
+p#countdown {
+    position: absolute;
+    left: 625px;
+    top: 400px;
+    font-size: 20px;
+}
+
+.next-game {
+    position: absolute;
+    left: 700px;
+    top: 385px;
+    font-size: 20px;
+}
+
+#table span {
+    font-size: 20px;
+    margin: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+}
+
+.dropdown_hover {
+    display: inline-block;
+    padding: 10px;
+    background: 323b40;
+    color: black;
+    cursor: pointer;
+}
+
+.dropdown_hover:hover {
+    background: rgb(179, 177, 177);
+}
+
+div.dropdown_menu {
+   position: absolute;
+   display: none;
+   top: 100%;
+   left: 0;
+   min-width: 168px;
+   background: none;
+   color: #323b40;
+   box-shadow: 0 3px 2px rgba(0,0,0,0,3);
+}
+
+.dropdown:hover .dropdown_menu {
+    display: block;
+}
+
+.dropdown_menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    border-top: solid 1px #e0e0e0;
+}
+
+.dropdown_menu a:hover {
+    background: rgb(179, 177, 177);;
+    color: #323b40;
+}
+
+p.position {
+    position: absolute;
+    left: 110px;
+    top: 170px;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    
+}
+p.name {
+    position: absolute;
+    left: 350px;
+    top: 170px;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+}
+p.goals {
+    position: absolute;
+    left: 585px;
+    top: 170px;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+}
+p.assists {
+    position: absolute;
+    left: 815px;
+    top: 170px;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+}
+p.points {
+    position: absolute;
+    left: 1055px;
+    top: 170px;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+}

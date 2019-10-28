@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="leeds.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leeds</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+<header>
+    <h1><img src="img/logo.png"></h1>
+</header>
+
+<p id="countdown"></p>
+<span class= "next-game">Next game starts in:</span>
+<script>
+let countDownDate = new Date("Nov 02, 2019 16:00:00").getTime();
+
+let x = setInterval(function() {
+
+  let now = new Date().getTime();
+    
+  let distance = countDownDate - now;
+    
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("countdown").innerHTML = days + " days " + hours + " hours "
+  + minutes + " minutes " + seconds + " seconds ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "Get ready, the game starts now :)!";
+  }
+}, 1000);
+</script>
+
+<section class="member">
+</section><br><br><br>
+
+<div class="container_myMenu">
+        <div class= "box-1">
+
+            <section>
+                    <div class="dropdown">
+                    <button class="dropdown_hover">Leeds United</button>
+                    <div class="dropdown_menu">
+                        <a href="images.html">Players/Images</a>
+                        <a href="table.html">Scoreboard</a>
+                        <a href="https://www.flashscore.se/lag/leeds/tUxUbLR2/resultat/">Results</a>
+                        <a href="https://www.flashscore.se/lag/leeds/tUxUbLR2/matcher/">Fixtures</a>
+                        <a href="https://www.flashscore.se/fotboll/england/championship/tabellstallning/">Table</a>
+                    </a>
+                </div>
+            </div>
+     
+            <div class="dropdown">
+                    <button class= "dropdown_hover">Top Leagues</button>
+                    <div class="dropdown_menu">
+                    <a href="https://www.flashscore.se/fotboll/england/premier-league/">Premier League</a>
+                    <a href="https://www.flashscore.se/fotboll/spanien/laliga/">La Liga</a>
+                    <a href="https://www.flashscore.se/fotboll/tyskland/bundesliga/">Bundesliga</a>
+                    <a href="https://www.flashscore.se/fotboll/italien/serie-a/">Serie A</a>
+                    <a href="https://www.flashscore.se/fotboll/frankrike/ligue-1/">Ligue 1</a>
+            </div>
+        </div>
+    </div>
+        </section>
+
+        <div class= "box-2">
+            <a href="https://www.youtube.com/watch?v=0T0Dybivgns"> Highlights from last game</a><br><br>
+            <a href="https://www.newsnow.co.uk/h/Sport/Football/Championship/Leeds+United"> Latest news</a><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            
+            <section class="input">
+                Want to support Leeds United? <br><br>
+            <input type="name" name="submit" placeholder="Type name & click JOIN!">
+            <a id="join-button">Join!</a>
+        </div>
+        
+
+        <div class= "box-3"><img src="img/pablo_hernandez.jpg"></div>
+        </div>
+
+<footer>
+    <p class="copyright">Copyright 2019 Leeds United fanpage</p>
+</footer>
+
+
+    <script src= "leeds.js"></script> 
+</body>
+</html>
