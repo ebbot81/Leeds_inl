@@ -5,7 +5,7 @@ class SupporterFunctions{
         let removeSupporterHtml = document.createElement("button");
         
         removeSupporterHtml.onclick = this.removeSupporter;
-        removeSupporterHtml.innerText = " Ta bort ";
+        removeSupporterHtml.innerText = " remove ";
         supporterHtml.innerText = name;
         supporterHtml.appendChild(removeSupporterHtml);
         supporterList.appendChild(supporterHtml);
