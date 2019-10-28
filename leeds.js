@@ -1,18 +1,12 @@
-class Person {
-    constructor(name) {
-        this.name = name;
-      }
-}
-
 class SupporterFunctions{
-    addSupporterToList(supporter){
+    addSupporterToList(name){
         let supporterList = document.querySelector("#supporters ul");
         let supporterHtml = document.createElement("li");
         let removeSupporterHtml = document.createElement("button");
         
         removeSupporterHtml.onclick = this.removeSupporter;
         removeSupporterHtml.innerText = " Ta bort ";
-        supporterHtml.innerText = supporter.name;
+        supporterHtml.innerText = name;
         supporterHtml.appendChild(removeSupporterHtml);
         supporterList.appendChild(supporterHtml);
 
@@ -33,9 +27,9 @@ class Supporters extends SupporterFunctions {
       }
 
       addSupporter() {
-        let supporter = new Person(document.querySelector("#supporter").value);
+        let name = document.querySelector("#supporter").value;
 
-        this.addSupporterToList(supporter);
+        this.addSupporterToList(name);
     }
 
     
