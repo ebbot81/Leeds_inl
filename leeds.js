@@ -1,16 +1,17 @@
 class Supporters {
-    constructor(name) {
-    this.name = name;
-    }    
-}
+    numberOfClicks = 0;
+    name = document.querySelector("#supporter");
 
-let numberOfClicks = 0;
-let button = document.getElementById("join-button");
-button.onclick = clickCountMembers;
-name = "";
+    constructor() {
+        let button = document.getElementById("join-button");
+        button.onclick = this.clickCountMembers.bind(this);
+      }
 
-function clickCountMembers() {
-    if (numberOfClicks ++) {
-        alert (`Congratulations ${this.name}, you are member number ${numberOfClicks}`)
+    clickCountMembers() {
+        if (++this.numberOfClicks) {
+            alert(`Congratulations ${this.name.value}, you are member number ${this.numberOfClicks}`)
+        }
     }
 }
+
+new Supporters()
