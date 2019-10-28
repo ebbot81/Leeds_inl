@@ -25,16 +25,25 @@
         <p class="assists">Assists</p>
         <p class="points">Points</p>
 
+        <script src="leeds.js"></script>
+
         <script>
 
-            class Player {
+            class Player extends Person {
                 constructor(name, goals, assists) {
-                    this.name = name;
+                    super(name);
+                    this.stats = new PlayerStats(goals, assists);
+                }
+            }
+
+            class PlayerStats{
+                constructor(goals, assists) {
                     this.goals = goals;
                     this.assists = assists;
                     this.points = goals + assists;
                 }
             }
+
             const players = [
                 new Player("Patrick Bamford", 4, 1),
                 new Player("Pablo Hernandez", 2, 2),
@@ -51,13 +60,13 @@
             let textInput = document.querySelector('#table');
             const sortedPlayers = players.sort(function (currentListItem, nextListItem) {
 
-                if (currentListItem.points > nextListItem.points) {
+                if (currentListItem.stats.points > nextListItem.stats.points) {
                     return -1;
-                } else if (currentListItem.points < nextListItem.points) {
+                } else if (currentListItem.stats.points < nextListItem.stats.points) {
                     return 1;
                 }
                 else {
-                    if (currentListItem.goals >= nextListItem.goals)
+                    if (currentListItem.stats.goals >= nextListItem.stats.goals)
                         return -1;
                     else {
                         return 1;
@@ -65,7 +74,7 @@
                 }
             })
 
-            sortedPlayers.forEach(function (item, index) {
+            sortedPlayers.forEach(function (player, index) {
                 let playerHtml = document.createElement("div");
                 let rankHtml = document.createElement("span");
                 let nameHtml = document.createElement("span");
@@ -74,10 +83,10 @@
                 let pointsHtml = document.createElement("span");
 
                 rankHtml.innerText = index + 1;
-                nameHtml.innerText = item.name;
-                goalsHtml.innerText = item.goals;
-                assistsHtml.innerText = item.assists;
-                pointsHtml.innerText = item.points;
+                nameHtml.innerText = player.name;
+                goalsHtml.innerText = player.stats.goals;
+                assistsHtml.innerText = player.stats.assists;
+                pointsHtml.innerText = player.stats.points;
 
                 playerHtml.appendChild(rankHtml);
                 playerHtml.appendChild(nameHtml);
@@ -91,7 +100,7 @@
 
         </script>
 
-        <script src="leeds.js"></script>
+        
 </body>
 
 </html>

@@ -82,10 +82,17 @@ p.copyright {
     border: 3px solid black;
     padding: 5px;
     border-radius: 36px;
-    position: absolute;
-    left: 650px;
-    bottom: 0;
+    text-align: center;
+    margin: auto;
+    /* position: absolute; */
+    /* left: 650px; */
+    /* bottom: 0; */
 }
+
+footer{
+    width: 100%;
+}
+
 div.box-1 {
     border: 8px solid black;
 }
