@@ -1,17 +1,21 @@
 class SupporterFunctions{
+
     addSupporterToList(name){
+
         let supporterList = document.querySelector("#supporters ul");
         let supporterHtml = document.createElement("li");
         let removeSupporterHtml = document.createElement("button");
         
         removeSupporterHtml.onclick = this.removeSupporter;
-        removeSupporterHtml.innerText = " remove ";
+        removeSupporterHtml.innerText = "remove";
         supporterHtml.innerText = name;
         supporterHtml.appendChild(removeSupporterHtml);
         supporterList.appendChild(supporterHtml);
 
     };
+
     removeSupporter(){
+
         let supporterList = document.querySelector("#supporters ul");
         let htmlToRemove = this.parentElement;
         supporterList.removeChild(htmlToRemove);
@@ -31,8 +35,6 @@ class Supporters extends SupporterFunctions {
 
         this.addSupporterToList(name);
     }
-
-    
 }
 
 new Supporters()

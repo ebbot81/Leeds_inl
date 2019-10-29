@@ -19,93 +19,94 @@
     </section>
 
     <div id="table"></div>
-        <p class="position">Position</p>
-        <p class="name">Name</p>
-        <p class="goals">Goals</p>
-        <p class="assists">Assists</p>
-        <p class="points">Points</p>
+    <p class="position">Position</p>
+    <p class="name">Name</p>
+    <p class="goals">Goals</p>
+    <p class="assists">Assists</p>
+    <p class="points">Points</p>
 
-        <script src="leeds.js"></script>
+    <script src="leeds.js"></script>
 
-        <script>
+    <script>
 
-            class Person {
-                constructor(name) {
-                    this.name = name;
-                }
+        class Person {
+            constructor(name) {
+                this.name = name;
             }
+        }
 
-            class Player extends Person {
-                constructor(name, goals, assists) {
-                    super(name);
-                    this.stats = new PlayerStats(goals, assists);
-                }
+        class Player extends Person {
+            constructor(name, goals, assists) {
+                super(name);
+                this.stats = new PlayerStats(goals, assists);
             }
+        }
 
-            class PlayerStats{
-                constructor(goals, assists) {
-                    this.goals = goals;
-                    this.assists = assists;
-                    this.points = goals + assists;
-                }
+        class PlayerStats {
+            constructor(goals, assists) {
+                this.goals = goals;
+                this.assists = assists;
+                this.points = goals + assists;
             }
+        }
 
-            const players = [
-                new Player("Patrick Bamford", 4, 1),
-                new Player("Pablo Hernandez", 2, 2),
-                new Player("Eddie Nketiah", 3, 0),
-                new Player("Mateusz Klich", 1, 1),
-                new Player("Ezgjan Alioski", 3, 0),
-                new Player("Stuart Dallas", 1, 0),
-                new Player("Jack Harrison", 1, 4),
-                new Player("Helder Costa", 0, 1),
-                new Player("Adam Forshaw", 0, 1),
-                new Player("Kalvin Phillips", 1, 1)
-            ];
+        const players = [
+            new Player("Patrick Bamford", 4, 1),
+            new Player("Pablo Hernandez", 2, 2),
+            new Player("Eddie Nketiah", 3, 0),
+            new Player("Mateusz Klich", 1, 1),
+            new Player("Ezgjan Alioski", 3, 0),
+            new Player("Stuart Dallas", 1, 0),
+            new Player("Jack Harrison", 1, 4),
+            new Player("Helder Costa", 0, 1),
+            new Player("Adam Forshaw", 0, 1),
+            new Player("Kalvin Phillips", 1, 1)
+            
+        ];
 
-            let textInput = document.querySelector('#table');
-            const sortedPlayers = players.sort(function (currentListItem, nextListItem) {
+        let textInput = document.querySelector('#table');
+        const sortedPlayers = players.sort(function (currentListItem, nextListItem) {
 
-                if (currentListItem.stats.points > nextListItem.stats.points) {
+            if (currentListItem.stats.points > nextListItem.stats.points) {
+                return -1;
+            } else if (currentListItem.stats.points < nextListItem.stats.points) {
+                return 1;
+            }
+            else {
+                if (currentListItem.stats.goals >= nextListItem.stats.goals)
                     return -1;
-                } else if (currentListItem.stats.points < nextListItem.stats.points) {
+                else {
                     return 1;
                 }
-                else {
-                    if (currentListItem.stats.goals >= nextListItem.stats.goals)
-                        return -1;
-                    else {
-                        return 1;
-                    }
-                }
-            })
+            }
+        })
 
-            sortedPlayers.forEach(function (player, index) {
-                let playerHtml = document.createElement("div");
-                let rankHtml = document.createElement("span");
-                let nameHtml = document.createElement("span");
-                let goalsHtml = document.createElement("span");
-                let assistsHtml = document.createElement("span");
-                let pointsHtml = document.createElement("span");
+        sortedPlayers.forEach(function (player, index) {
+            let playerHtml = document.createElement("div");
+            let rankHtml = document.createElement("span");
+            let nameHtml = document.createElement("span");
+            let goalsHtml = document.createElement("span");
+            let assistsHtml = document.createElement("span");
+            let pointsHtml = document.createElement("span");
 
-                rankHtml.innerText = index + 1;
-                nameHtml.innerText = player.name;
-                goalsHtml.innerText = player.stats.goals;
-                assistsHtml.innerText = player.stats.assists;
-                pointsHtml.innerText = player.stats.points;
+            rankHtml.innerText = index + 1;
+            nameHtml.innerText = player.name;
+            goalsHtml.innerText = player.stats.goals;
+            assistsHtml.innerText = player.stats.assists;
+            pointsHtml.innerText = player.stats.points;
 
-                playerHtml.appendChild(rankHtml);
-                playerHtml.appendChild(nameHtml);
-                playerHtml.appendChild(goalsHtml);
-                playerHtml.appendChild(assistsHtml);
-                playerHtml.appendChild(pointsHtml);
+            playerHtml.appendChild(rankHtml);
+            playerHtml.appendChild(nameHtml);
+            playerHtml.appendChild(goalsHtml);
+            playerHtml.appendChild(assistsHtml);
+            playerHtml.appendChild(pointsHtml);
 
-                textInput.appendChild(playerHtml);
+            textInput.appendChild(playerHtml);
 
-            });
+        });
 
-        </script>
-        
+    </script>
+
 </body>
 
 </html>
